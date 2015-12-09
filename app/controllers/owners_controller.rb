@@ -1,6 +1,6 @@
 class OwnersController < ApplicationController
   def index
-    @owners = Owner.all.sort_by{|onr| onr.first_name }
+    @owners = Owner.all
   end
 
   def show
