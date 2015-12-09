@@ -38,10 +38,7 @@ group :development, :test do
   gem 'pry'
   gem 'pry-byebug'
   gem 'better_errors'
-<<<<<<< HEAD
-=======
 
->>>>>>> e8afdeca4012cf5b6d18cc75d59df09e00e84bb4
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
