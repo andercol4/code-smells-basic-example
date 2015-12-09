@@ -4,15 +4,13 @@ class OwnersController < ApplicationController
   end
 
   def show
-    @onr = nil
-    @onr = Owner.find(params[:id])
-    return @onr if @onr
+    @owner = Owner.find(params[:id])
   end
 
   def update
-    @owner = Owner.find_by(id: params[:id])
+    @owner = Owner.find_by(params[:id])
     if @owner.update(owner_params)
-      # redirect_to owners_path, success: "Owner with name #{params[:owner][:first_name]} #{params[:owner][:last_name]} was updated successfully"
+       redirect_to owners_path, success: "Owner with name #{params[:owner][:first_name]} #{params[:owner][:last_name]} was updated successfully"
     else
       flash[:error] = "Owner with name #{params[:owner][:first_name]} #{params[:owner][:last_name]} was not created successfully"
       # render 'edit'
@@ -33,7 +31,8 @@ class OwnersController < ApplicationController
   end
 
   def edit
-    @owner = Owner.find_by(name: params[:name])
+    @owner = Owner.find_by(params[:id])
+
   end
 
   def destroy
